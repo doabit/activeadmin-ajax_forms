@@ -73,7 +73,6 @@ function initSelect2Autocomplete(specificSelector) {
                 url: sourcePath,
                 dataType: 'json',
                 data: function (term, page) {
-                    console.log(term, window.encodeURIComponent(term), 1)
                     selectorValue="";
                     ransackFilter="";
                     dependentField=select.data("dependent");
@@ -84,7 +83,7 @@ function initSelect2Autocomplete(specificSelector) {
                         dependentSelectHash={"ransackFilter": ransackFilter, "selectorValue": selectorValue};
                     }
                     return {
-                        q: term,
+                        q: encodeURIComponent(term),
                         page_limit: page,
                         page: page,
                         dependentSelect: dependentSelectHash
@@ -100,7 +99,7 @@ function initSelect2Autocomplete(specificSelector) {
 
         options.formatNoMatches = function (term) {
             var destinationSelectorId=select.attr('id');
-            var modalPath = "'" + select.data('modal') + "/" + (term)+"/"+encodeURI(destinationSelectorId) +"'";
+            var modalPath = "'" + select.data("modal") + "/" + encodeURI(destinationSelectorId) + "/" + addslashes(term) + "'";
             var create_text = select.data('create') || "<%= I18n.t('ajax_form.create') %>";
             return '<a href="#" class="btn btn-xs btn-primary add-item-button pull-right" onclick="return fancybox(' + modalPath + ');">' + create_text + ': "' + term + '"</a>';
         };

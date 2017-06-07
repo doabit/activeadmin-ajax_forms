@@ -1,17 +1,22 @@
 # ActiveadminAjaxForm
-Short description and motivation.
 
-## Usage
-How to use my plugin.
+Ajax form for activeadmin.
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'activeadmin_ajax_form'
+gem 'activeadmin_ajax_form', github: 'doabit/activeadmin_ajax_form'
 gem 'select2-rails', '~> 3.5.10'
 gem 'fancybox-rails'
 ```
+
+And then execute:
+```bash
+$ bundle
+```
+
+## Usage
 
 Add `select2` and `fancybox` to `active_admin.js.coofee`
 
@@ -64,16 +69,6 @@ end
   <% end %>
   <%= f.actions %>
 <% end %>
-```
-
-And then execute:
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install activeadmin_ajax_form
 ```
 
 ## Contributing

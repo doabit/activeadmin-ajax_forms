@@ -83,7 +83,7 @@ function initSelect2Autocomplete(specificSelector) {
                         dependentSelectHash={"ransackFilter": ransackFilter, "selectorValue": selectorValue};
                     }
                     return {
-                        q: encodeURIComponent(term),
+                        q: term,
                         page_limit: page,
                         page: page,
                         dependentSelect: dependentSelectHash
